@@ -37,5 +37,5 @@ next-env.d.ts
 
 # Claude Code
 .claude/
-# Large video files (host externally)
+# Large video files (host externally — mp4 version is 154MB, over GitHub limit)
 public/cisco/SecureIT.mp4

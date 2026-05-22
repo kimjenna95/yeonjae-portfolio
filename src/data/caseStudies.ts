@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
       href: `https://stevieawards.com/aba/cisco-san-jose-california-united-states-myid-groups-cisco-it-unified-group-management-platform`,
     },
     contextVideo: {
-      src: `/cisco/SecureIT.mp4`,
+      src: `/cisco/SecureIT.mov`,
       label: `SecureIT Platform`,
       title: `The ecosystem MyID Groups operates within`,
       body: `MyID Groups is one component of SecureIT — Cisco's enterprise identity and security platform serving the company's global workforce. This overview shows how the platform's systems interconnect: identity, access management, provisioning, approvals, and governance. Understanding how these pieces relate — and where they create friction — was foundational to the design decisions behind MyID Groups.`,
