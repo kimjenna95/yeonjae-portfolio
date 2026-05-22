@@ -166,7 +166,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
 
       {/* Sticky nav — 116px total height (48px padding top + bottom, 20px link line-height) */}
       <div style={{ position: 'sticky', top: 0, background: '#fff', borderBottom: '1px solid #eee', zIndex: 1000 }}>
-        <div style={{ maxWidth: 940, margin: '0 auto', padding: '48px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-6 py-6 md:py-12 flex items-center justify-between">
           <Link href="/" style={{ ...B600, fontSize: 18, lineHeight: '20px', color: '#141414', textDecoration: 'none' }} className="hover:opacity-60 transition-opacity">
             Yeonjae Kim
           </Link>
@@ -222,18 +222,18 @@ export default function ProjectDetail({ project, prev, next }: Props) {
       ───────────────────────────────────────────────────────────── */}
       <FadeUp style={{ maxWidth: 800, margin: '0 auto', paddingBottom: 56 }} >
       <div className="px-6 md:px-12">
-        <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <div className="flex flex-col md:flex-row md:items-start">
 
-          {/* Overview — 66% */}
-          <div style={{ flex: '0 0 66.6%' }}>
+          {/* Overview — full on mobile, 66% on desktop */}
+          <div className="md:flex-[0_0_66.6%]">
             <div style={{ ...LABEL, marginBottom: 16 }}>Overview</div>
             <div style={{ ...B300, fontSize: 16, lineHeight: '28px', color: '#000', whiteSpace: 'pre-line' }}>
               {caseStudy ? caseStudy.overview : project.description}
             </div>
           </div>
 
-          {/* Role + Timeline — 34% */}
-          <div style={{ flex: '0 0 33.4%', paddingLeft: 40 }}>
+          {/* Role + Timeline — full on mobile, 34% on desktop */}
+          <div className="mt-8 md:mt-0 md:flex-[0_0_33.4%] md:pl-10">
             <div style={{ marginBottom: 24 }}>
               <div style={{ ...LABEL, marginBottom: 16 }}>Role</div>
               <div style={{ ...B300, fontSize: 16, lineHeight: '24px', ...TEXT }}>
@@ -265,7 +265,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
             {caseStudy.metrics.map((m, i) => (
               <div
                 key={i}
-                className="fade-up"
+                className="fade-up metric-card"
                 style={{
                   transitionDelay: `${i * 80}ms`,
                   padding: '40px 0',
@@ -478,7 +478,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
             {/* Section videos — 960px, stacked or side-by-side grid */}
             {section.videos && (
               <div style={{ maxWidth: 960, margin: '40px auto 0' }} className="px-6 md:px-12">
-                <div style={section.videosGrid
+                <div className={section.videosGrid ? 'videos-grid' : ''} style={section.videosGrid
                   ? { display: 'grid', gridTemplateColumns: section.videosGridCols ?? `repeat(${section.videos.length}, 1fr)`, gap: 16, alignItems: 'start' }
                   : { display: 'flex', flexDirection: 'column', gap: 24 }
                 }>
@@ -516,7 +516,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                 /* ── Grid layout: pairs of subsections side by side ── */
                 <FadeUp style={{ maxWidth: 960, margin: '40px auto 0' }}>
                   <div className="px-6 md:px-12">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 32px' }}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
                       {section.subsections.map((sub, j) => (
                         <div key={j}>
                           <div style={{ ...B600, fontSize: 16, lineHeight: '24px', color: '#000', marginBottom: 8 }}>
@@ -609,16 +609,17 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                     return (
                       <FadeUp key={j} style={{ maxWidth: 960, margin: `${topMargin}px auto 0` }}>
                         <div className="px-6 md:px-12">
-                          <div style={{ display: 'flex', gap: 48, alignItems: 'flex-start' }}>
+                          <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
                             {isMediaLeft ? (
                               <>
-                                <div style={{ flex: '0 0 52%', boxShadow: sub.mediaShadow }}>{mediaBlock}</div>
-                                <div style={{ flex: 1, paddingTop: 8 }}>{textBlock}</div>
+                                {/* On mobile: text first (order-1), media below (order-2) */}
+                                <div className="order-2 md:order-1 md:flex-[0_0_52%]" style={{ boxShadow: sub.mediaShadow }}>{mediaBlock}</div>
+                                <div className="order-1 md:order-2 md:flex-1 md:pt-2">{textBlock}</div>
                               </>
                             ) : (
                               <>
-                                <div style={{ flex: 1, paddingTop: 8 }}>{textBlock}</div>
-                                <div style={{ flex: '0 0 52%', boxShadow: sub.mediaShadow }}>{mediaBlock}</div>
+                                <div className="md:flex-1 md:pt-2">{textBlock}</div>
+                                <div className="md:flex-[0_0_52%]" style={{ boxShadow: sub.mediaShadow }}>{mediaBlock}</div>
                               </>
                             )}
                           </div>

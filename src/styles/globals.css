@@ -453,7 +453,7 @@ body {
   .metrics-grid {
     grid-template-columns: 1fr 1fr !important;
   }
-  .metrics-grid > div {
+  .metric-card {
     border-right: none !important;
     border-bottom: 1px solid #eee;
     padding-left: 0 !important;
@@ -461,6 +461,11 @@ body {
   }
   .metrics-grid > div:nth-last-child(-n+2) {
     border-bottom: none;
+  }
+
+  /* Videos grid stacks on mobile */
+  .videos-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
