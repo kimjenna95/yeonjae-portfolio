@@ -148,17 +148,17 @@ export default function SilentEchoDetail({ prev, next }: Props) {
       {/* ══════════════════════════════════════════════════════════
           2. OPENING STATEMENT
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 600, margin: '0 auto', padding: '120px 24px 100px', textAlign: 'center' }}>
+      <FadeUp style={{ maxWidth: 600, margin: '0 auto', padding: '120px 24px 100px', textAlign: 'center' }}>
         <p style={{ ...B300, fontSize: 21, lineHeight: '38px', color: '#141414', fontStyle: 'italic', margin: '0 0 48px' }}>
           &ldquo;There are things we carry without knowing — the warmth of a presence that has left the room, the imprint of a hand, the breath of a name never spoken aloud.&rdquo;
         </p>
         <Divider />
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           3. METADATA STRIP
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 720, margin: '0 auto 120px', padding: '0 24px' }}>
+      <FadeUp style={{ maxWidth: 720, margin: '0 auto 120px', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, borderTop: '1px solid #ececec', paddingTop: 40 }}>
           {[
             { label: 'Role',   value: 'Fashion Designer' },
@@ -171,14 +171,14 @@ export default function SilentEchoDetail({ prev, next }: Props) {
             </div>
           ))}
         </div>
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           4. CONCEPT — text left, echo.png right
          ══════════════════════════════════════════════════════════ */}
       <div style={{ maxWidth: 880, margin: '0 auto 120px', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px 72px', alignItems: 'center' }}>
-          <div>
+          <FadeUp>
             <Label>The Concept</Label>
             <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: '0 0 28px' }}>
               <em>Silent Echo</em> explores the emotional residue left behind by absence — the invisible weight of memory, silence, and unresolved presence. Garments become surfaces where traces linger: memories compressed into texture, loneliness worn like a second skin.
@@ -186,7 +186,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
             <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: 0 }}>
               Inspired by Han Yong-un&rsquo;s poem &ldquo;비밀&rdquo; (Secret), the collection reflects the belief that the most profound emotions are often the ones withheld. That silence carries its own gravity. That what remains unspoken echoes the longest.
             </p>
-          </div>
+          </FadeUp>
           <FadeUp>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={ECHO} alt="Silent Echo"
@@ -269,7 +269,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
          ══════════════════════════════════════════════════════════ */}
       <div style={{ maxWidth: 880, margin: '140px auto', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px 64px', alignItems: 'start' }}>
-          <div>
+          <FadeUp>
             <Label>Garment Language</Label>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
               {[
@@ -296,7 +296,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
                 </div>
               ))}
             </div>
-          </div>
+          </FadeUp>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {/* Knit swatch — natural ratio, no crop */}
             <FadeUp>
@@ -384,12 +384,12 @@ export default function SilentEchoDetail({ prev, next }: Props) {
       {/* ══════════════════════════════════════════════════════════
           11. CLOSING REFLECTION
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 560, margin: '140px auto', padding: '0 24px', textAlign: 'center' }}>
+      <FadeUp style={{ maxWidth: 560, margin: '140px auto', padding: '0 24px', textAlign: 'center' }}>
         <Divider />
         <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#6a6a6a', margin: '48px 0 0', fontStyle: 'italic' }}>
           The garments do not speak. They hold. Silence is its own language — weighted, patient, precise.
         </p>
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           11. PREV / NEXT

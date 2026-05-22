@@ -185,17 +185,17 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
       {/* ══════════════════════════════════════════════════════════
           2. OPENING QUOTE
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 600, margin: '0 auto', padding: '120px 24px 100px', textAlign: 'center' }}>
+      <FadeUp style={{ maxWidth: 600, margin: '0 auto', padding: '120px 24px 100px', textAlign: 'center' }}>
         <p style={{ ...B300, fontSize: 21, lineHeight: '38px', color: '#141414', fontStyle: 'italic', margin: '0 0 48px' }}>
           &ldquo;Happiness is largely a matter of being thankful for the small things around us — not being greedy, not desiring for more. Life should be sweet. Life should be happy.&rdquo;
         </p>
         <Divider />
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           3. METADATA STRIP
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 720, margin: '0 auto 120px', padding: '0 24px' }}>
+      <FadeUp style={{ maxWidth: 720, margin: '0 auto 120px', padding: '0 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, borderTop: '1px solid #ececec', paddingTop: 40 }}>
           {[
             { label: 'Role',   value: 'Fashion Designer' },
@@ -208,7 +208,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
             </div>
           ))}
         </div>
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           4. CONCEPT — text left, process notes image right
@@ -216,7 +216,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
       <div style={{ maxWidth: 880, margin: '120px auto', padding: '0 24px' }}>
         <div style={{ display: 'flex', gap: 64, alignItems: 'flex-start' }}>
           {/* Left: concept text */}
-          <div style={{ flex: '1 1 0' }}>
+          <FadeUp style={{ flex: '1 1 0' }}>
             <Label>The Concept</Label>
             <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: '0 0 24px' }}>
               <em>Life is Sweet</em> is a womenswear collection born from an obsession with small, saturated moments of pleasure — a slice of cake left on a counter, the careful spiral of frosting, the gentle weight of a layered pastry.
@@ -224,7 +224,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
             <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: 0 }}>
               The collection explores how joy can be structural — built into silhouette, pleating, and proportion — and how garments can carry an emotional register that is at once sophisticated and deeply personal.
             </p>
-          </div>
+          </FadeUp>
 
           {/* Right: process notes */}
           <FadeUp style={{ flexShrink: 0, width: 380 }}>
@@ -249,13 +249,15 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
         onMouseLeave={onThiebaudLeave}
         style={{ maxWidth: 840, margin: '140px auto', padding: '0 24px', textAlign: 'center', cursor: 'default' }}
       >
-        <Label>Inspiration</Label>
-        <p style={{ ...B300, fontSize: 19, lineHeight: '34px', color: '#141414', margin: '0 0 20px' }}>
-          The paintings of Wayne Thiebaud.
-        </p>
-        <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: 0 }}>
-          Thiebaud&rsquo;s dessert paintings — luminous, hyperreal, abundant — gave the collection its color palette and emotional temperature. His cakes and pies are not about food. They are about longing, abundance, and the strange intimacy of objects we consume. The collection borrows his palette directly, translating the warm pastels and soft whites of his canvases into garment, surface, and structure.
-        </p>
+        <FadeUp>
+          <Label>Inspiration</Label>
+          <p style={{ ...B300, fontSize: 19, lineHeight: '34px', color: '#141414', margin: '0 0 20px' }}>
+            The paintings of Wayne Thiebaud.
+          </p>
+          <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#141414', margin: 0 }}>
+            Thiebaud&rsquo;s dessert paintings — luminous, hyperreal, abundant — gave the collection its color palette and emotional temperature. His cakes and pies are not about food. They are about longing, abundance, and the strange intimacy of objects we consume. The collection borrows his palette directly, translating the warm pastels and soft whites of his canvases into garment, surface, and structure.
+          </p>
+        </FadeUp>
       </div>
 
       {/* ── Thiebaud floating tooltip — position:fixed, pointer-events:none ── */}
@@ -359,7 +361,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
         <Label>Design Language</Label>
         <div style={{ display: 'flex', gap: 48, alignItems: 'flex-start' }}>
           {/* Left: text entries */}
-          <div style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', gap: 36 }}>
+          <FadeUp style={{ flex: '1 1 0', display: 'flex', flexDirection: 'column', gap: 36 }}>
             {[
               {
                 name: 'Silhouette',
@@ -383,7 +385,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
                 <p style={{ ...B300, fontSize: 16, lineHeight: '28px', color: '#6a6a6a', margin: 0 }}>{desc}</p>
               </div>
             ))}
-          </div>
+          </FadeUp>
 
           {/* Right: 2 natural-ratio images */}
           <div style={{ flexShrink: 0, width: 300, display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -474,12 +476,12 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
       {/* ══════════════════════════════════════════════════════════
           12. CLOSING STATEMENT
          ══════════════════════════════════════════════════════════ */}
-      <div style={{ maxWidth: 560, margin: '140px auto', padding: '0 24px', textAlign: 'center' }}>
+      <FadeUp style={{ maxWidth: 560, margin: '140px auto', padding: '0 24px', textAlign: 'center' }}>
         <Divider />
         <p style={{ ...B300, fontSize: 17, lineHeight: '32px', color: '#6a6a6a', margin: '48px 0 0', fontStyle: 'italic' }}>
           The collection was designed to find a more lighthearted manner and to discover joy in unique design — to remind the wearer that sweetness is not trivial. It is essential.
         </p>
-      </div>
+      </FadeUp>
 
       {/* ══════════════════════════════════════════════════════════
           13. PREV / NEXT
