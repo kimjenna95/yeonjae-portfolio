@@ -47,19 +47,6 @@ function Divider() {
   return <div style={{ width: 40, height: 1, background: '#d8d8d8', margin: '0 auto' }} />
 }
 
-/** Natural-ratio editorial image — no cropping, no upscaling */
-function Shot({ src, style }: { src: string; style?: React.CSSProperties }) {
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt=""
-      style={{ display: 'block', width: '100%', height: 'auto', ...style }}
-      loading="lazy"
-      decoding="async"
-    />
-  )
-}
 
 interface Props {
   project: Project
@@ -67,7 +54,7 @@ interface Props {
   next: Project | null
 }
 
-export default function SilentEchoDetail({ project, prev, next }: Props) {
+export default function SilentEchoDetail({ prev, next }: Props) {
   const [scrolled, setScrolled] = useState(false)
 
   // Sketchbook gallery refs

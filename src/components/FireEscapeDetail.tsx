@@ -44,7 +44,7 @@ interface Props {
   next: Project | null
 }
 
-export default function FireEscapeDetail({ project, prev, next }: Props) {
+export default function FireEscapeDetail({ prev, next }: Props) {
   const outerRef    = useRef<HTMLDivElement>(null)
   const trackRef    = useRef<HTMLDivElement>(null)
   const progressRef = useRef<HTMLDivElement>(null)

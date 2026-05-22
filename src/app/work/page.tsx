@@ -11,7 +11,6 @@ import FadeUp from '@/components/FadeUp'
 
 const B300: React.CSSProperties = { fontFamily: 'Barlow, sans-serif', fontWeight: 300 }
 const B400: React.CSSProperties = { fontFamily: 'Barlow, sans-serif', fontWeight: 400 }
-const B500: React.CSSProperties = { fontFamily: 'Barlow, sans-serif', fontWeight: 500 }
 const B600: React.CSSProperties = { fontFamily: 'Barlow, sans-serif', fontWeight: 600 }
 const TEXT: React.CSSProperties = { color: '#333' }
 

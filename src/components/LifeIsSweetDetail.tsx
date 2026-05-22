@@ -56,7 +56,7 @@ interface Props {
 const PHOTOS     = Array.from({ length: 21 }, (_, i) => shoot(i + 1))
 const TALL_IDX   = new Set([2, 5, 8, 11, 14, 17, 20])
 
-export default function LifeIsSweetDetail({ project, prev, next }: Props) {
+export default function LifeIsSweetDetail({ prev, next }: Props) {
   const [scrolled, setScrolled] = useState(false)
 
   // ── Sketchbook carousel refs ─────────────────────────────────────
