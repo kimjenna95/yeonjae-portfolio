@@ -77,7 +77,7 @@ export default function ResumePage() {
       {/* Resume content */}
       <div style={{ background: '#fff', padding: '64px 0 0' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }} className="px-6 md:px-12">
-            <div style={{ display: 'grid', gridTemplateColumns: '293px 1fr' }}>
+            <div className="resume-grid">
 
               {/* LEFT COLUMN */}
               <div style={{ paddingRight: 40 }}>
@@ -173,7 +173,7 @@ export default function ResumePage() {
           {/* Footer */}
           <div style={{ borderTop: '1px solid #eee', marginTop: 100 }}>
             <div style={{ maxWidth: 880, margin: '0 auto', padding: '64px 24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div className="resume-footer">
                 <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
                 <a
                   href="mailto:yeonjae.design@gmail.com"

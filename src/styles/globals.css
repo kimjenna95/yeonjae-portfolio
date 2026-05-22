@@ -464,6 +464,37 @@ body {
   }
 }
 
+/* ─── Resume page responsive layout ─────────────────────────── */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 293px 1fr;
+}
+
+.resume-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-grid > div:first-child {
+    padding-right: 0 !important;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 48px;
+  }
+
+  .resume-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
 /* ─── Line clamp ─────────────────────────────────────────────── */
 .line-clamp-2 {
   display: -webkit-box;
