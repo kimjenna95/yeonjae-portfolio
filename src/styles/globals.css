@@ -469,6 +469,21 @@ body {
   }
 }
 
+/* ─── Shared site footer row ─────────────────────────────────── */
+.site-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+  .site-footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
 /* ─── Resume page responsive layout ─────────────────────────── */
 .resume-grid {
   display: grid;

@@ -734,7 +734,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <div style={{ borderTop: '1px solid #eee', marginTop: 80 }}>
         <div style={{ maxWidth: 940, margin: '0 auto', padding: '64px 0' }} className="px-6 md:px-12">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div className="site-footer-row">
             <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
             <a href="mailto:yeonjae.design@gmail.com" target="_blank" rel="noopener noreferrer"
               style={{ ...B300, fontSize: 16, lineHeight: '20px', ...TEXT, textDecoration: 'none' }}

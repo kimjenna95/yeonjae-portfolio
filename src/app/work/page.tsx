@@ -140,7 +140,7 @@ export default function WorkPage() {
         {/* Footer */}
         <div style={{ borderTop: '1px solid #eee' }}>
           <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-6 md:px-12">
-            <div style={{ padding: '64px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ padding: '64px 0' }} className="site-footer-row">
               <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
               <a
                 href="mailto:yeonjae.design@gmail.com"
