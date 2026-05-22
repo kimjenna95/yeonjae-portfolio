@@ -77,10 +77,10 @@ export default function ResumePage() {
       {/* Resume content */}
       <div style={{ background: '#fff', padding: '64px 0 0' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }} className="px-6 md:px-12">
-            <div className="resume-grid">
+            <div className="grid grid-cols-1 md:grid-cols-[293px_1fr]">
 
               {/* LEFT COLUMN */}
-              <div style={{ paddingRight: 40 }}>
+              <div className="pr-0 md:pr-10 pb-12 md:pb-0 border-b md:border-b-0 border-gray-100 mb-12 md:mb-0">
 
                 {/* Download PDF */}
                 <FadeUp style={{ marginBottom: 40 }}>
@@ -173,7 +173,7 @@ export default function ResumePage() {
           {/* Footer */}
           <div style={{ borderTop: '1px solid #eee', marginTop: 100 }}>
             <div style={{ maxWidth: 880, margin: '0 auto', padding: '64px 24px' }}>
-              <div className="resume-footer">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
                 <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
                 <a
                   href="mailto:yeonjae.design@gmail.com"
