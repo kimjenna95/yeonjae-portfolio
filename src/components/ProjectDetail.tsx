@@ -636,7 +636,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                       </FadeUp>
                       {mediaBlock && (
                         <FadeUp style={{ maxWidth: 960, margin: '32px auto 0' }}>
-                          <div className="px-6 md:px-12">{mediaBlock}</div>
+                          <div className="px-6 md:px-12" style={{ boxShadow: sub.mediaShadow }}>{mediaBlock}</div>
                         </FadeUp>
                       )}
                     </div>

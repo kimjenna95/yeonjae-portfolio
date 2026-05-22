@@ -118,7 +118,6 @@ export const caseStudies: CaseStudy[] = [
             feedback:
               `Users wanted clearer guidance on which group type to select. We added contextual descriptions at the type-selection step and surfaced help links inline — reducing misclassification and support tickets.`,
             video: `/cisco/creategroup.mov`,
-            mediaPosition: `left`,
             mediaShadow: `0px 8px 6px 0px rgba(9, 17, 33, 0.08)`,
           },
           {
@@ -128,7 +127,6 @@ export const caseStudies: CaseStudy[] = [
             feedback:
               `Group owners needed to understand not just who had access, but why — especially for compliance-sensitive groups. We added access reason and approval history columns to address this directly.`,
             image: `/cisco/accessdetails.png`,
-            mediaPosition: `right`,
           },
           {
             title: `C. Approvals and governance`,
@@ -137,7 +135,6 @@ export const caseStudies: CaseStudy[] = [
             feedback:
               `Early testing revealed that requestors lost confidence when they couldn't see where their request stood. We introduced a persistent status timeline so both parties had visibility into the approval state at all times.`,
             image: `/cisco/approval.png`,
-            mediaPosition: `left`,
           },
           {
             title: `D. Admin tooling`,
@@ -146,7 +143,6 @@ export const caseStudies: CaseStudy[] = [
             feedback:
               `Admins managing hundreds of groups needed bulk actions and filtering by activity state. We prioritized dormancy alerts and batch lifecycle controls as the highest-impact additions based on admin interviews.`,
             image: `/cisco/activitylog.png`,
-            mediaPosition: `right`,
           },
         ],
       },
