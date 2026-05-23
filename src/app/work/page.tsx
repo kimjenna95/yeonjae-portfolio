@@ -82,7 +82,7 @@ function ProjectCard({ project, delay = 0 }: { project: typeof projects[0]; dela
           {project.name}
           {project.subtitle && ` — ${project.subtitle}`}
           {isWip && (
-            <span style={{ ...B300, fontSize: 12, color: '#a4a4a4', marginLeft: 10, fontStyle: 'italic' }}>
+            <span style={{ ...B300, fontSize: 12, color: '#767676', marginLeft: 10, fontStyle: 'italic' }}>
               WIP
             </span>
           )}
@@ -105,7 +105,7 @@ export default function WorkPage() {
       <div style={{ background: '#fff', paddingTop: 72 }}>
 
         {/* Featured project cards */}
-        <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-6 md:px-12">
+        <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-4 md:px-12">
 
           <FadeUp style={{ textAlign: 'center', marginBottom: 80 }}>
             <span style={{ ...B600, fontSize: 20, lineHeight: '28px', ...TEXT }}>Featured Work</span>
@@ -118,7 +118,7 @@ export default function WorkPage() {
         </div>
 
         {/* Past work 2-column grid */}
-        <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-6 md:px-12">
+        <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-4 md:px-12">
 
           <FadeUp style={{ textAlign: 'center', marginTop: 160, marginBottom: 56 }}>
             <span style={{ ...B600, fontSize: 20, lineHeight: '28px', ...TEXT }}>Past Work</span>
@@ -139,7 +139,7 @@ export default function WorkPage() {
 
         {/* Footer */}
         <div style={{ borderTop: '1px solid #eee' }}>
-          <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-6 md:px-12">
+          <div style={{ maxWidth: 940, margin: '0 auto' }} className="px-4 md:px-12">
             <div style={{ padding: '64px 0' }} className="site-footer-row">
               <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
               <a

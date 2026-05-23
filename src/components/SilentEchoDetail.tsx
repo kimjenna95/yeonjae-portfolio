@@ -204,7 +204,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
           <Label>Process &nbsp;/&nbsp; Sketchbook</Label>
           <p
             ref={cueRef as React.RefObject<HTMLParagraphElement>}
-            style={{ ...B300, fontSize: 11, letterSpacing: '2px', color: '#888', textTransform: 'uppercase', margin: '0 0 20px', transition: 'opacity 0.8s ease' }}>
+            style={{ ...B300, fontSize: 11, letterSpacing: '2px', color: '#767676', textTransform: 'uppercase', margin: '0 0 20px', transition: 'opacity 0.8s ease' }}>
             Scroll to turn through the pages →
           </p>
         </div>
@@ -236,7 +236,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
             <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 80px 10px' }}>
               <span
                 ref={counterRef as React.RefObject<HTMLSpanElement>}
-                style={{ ...B300, fontSize: 10, color: '#888', letterSpacing: '1px', fontVariantNumeric: 'tabular-nums' }}>
+                style={{ ...B300, fontSize: 10, color: '#767676', letterSpacing: '1px', fontVariantNumeric: 'tabular-nums' }}>
                 1 / {SKETCHBOOK.length}
               </span>
             </div>
@@ -370,7 +370,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
             <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 40px 10px' }}>
               <span
                 ref={photoCounterRef as React.RefObject<HTMLSpanElement>}
-                style={{ ...B300, fontSize: 10, color: '#888', letterSpacing: '1px', fontVariantNumeric: 'tabular-nums' }}>
+                style={{ ...B300, fontSize: 10, color: '#767676', letterSpacing: '1px', fontVariantNumeric: 'tabular-nums' }}>
                 1 / {PHOTOS.length}
               </span>
             </div>
@@ -415,7 +415,7 @@ export default function SilentEchoDetail({ prev, next }: Props) {
 
       {/* FOOTER */}
       <div style={{ borderTop: '1px solid #eee' }}>
-        <div style={{ maxWidth: 940, margin: '0 auto', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 940, margin: '0 auto', paddingTop: 64, paddingBottom: 64 }} className="px-4 md:px-6">
           <div className="site-footer-row">
             <span style={{ ...B600, fontSize: 16, color: '#333' }}>Yeonjae Kim</span>
             <a href="mailto:yeonjae.design@gmail.com" target="_blank" rel="noopener noreferrer"

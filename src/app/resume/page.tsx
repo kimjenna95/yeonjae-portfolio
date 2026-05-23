@@ -15,7 +15,7 @@ function SectionLabel({ children, divider }: { children: React.ReactNode; divide
     <div style={{ marginBottom: 24 }}>
       <span style={{
         display: 'inline-block',
-        ...L700, fontSize: 12, lineHeight: '20px', color: '#a4a4a4', letterSpacing: '1px',
+        ...L700, fontSize: 12, lineHeight: '20px', color: '#767676', letterSpacing: '1px',
         ...(divider ? { borderTop: '1px solid #d8d8d8', paddingTop: 24 } : {}),
       }}>
         {children}
@@ -172,7 +172,7 @@ export default function ResumePage() {
 
           {/* Footer */}
           <div style={{ borderTop: '1px solid #eee', marginTop: 100 }}>
-            <div style={{ maxWidth: 880, margin: '0 auto', padding: '64px 24px' }}>
+            <div style={{ maxWidth: 880, margin: '0 auto', paddingTop: 64, paddingBottom: 64 }} className="px-4 md:px-6">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
                 <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
                 <a

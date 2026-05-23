@@ -23,8 +23,9 @@ function FadeUp({ children, style }: { children: React.ReactNode; style?: React.
   return <div ref={ref} className="fade-up" style={style}>{children}</div>
 }
 
-/** Plays when scrolled into view (≥50% visible), pauses when scrolled away. Natural ratio — no crop. */
-function AutoplayVideo({ src, width, height }: { src: string; width?: number | string; height?: number | string }) {
+/** Plays when scrolled into view (≥50% visible), pauses when scrolled away. Natural ratio — no crop.
+ *  Pass crop=true to clip Mac window chrome: shifts video up 2.5% and clips via overflow:hidden. */
+function AutoplayVideo({ src, width, height, crop }: { src: string; width?: number | string; height?: number | string; crop?: boolean }) {
   const ref = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -42,7 +43,7 @@ function AutoplayVideo({ src, width, height }: { src: string; width?: number | s
   }, [])
 
   const hasCustomSize = width !== undefined || height !== undefined
-  return (
+  const videoEl = (
     <video
       ref={ref}
       src={src}
@@ -51,10 +52,17 @@ function AutoplayVideo({ src, width, height }: { src: string; width?: number | s
       playsInline
       style={hasCustomSize
         ? { display: 'block', width: width ?? 'auto', height: height ?? 'auto' }
-        : { display: 'block', width: '100%', height: 'auto' }
+        : crop
+          ? { display: 'block', width: '100%', height: 'auto', marginTop: '-2.5%', marginBottom: '-0.5%' }
+          : { display: 'block', width: '100%', height: 'auto' }
       }
     />
   )
+
+  if (crop) {
+    return <div style={{ overflow: 'hidden' }}>{videoEl}</div>
+  }
+  return videoEl
 }
 
 /** Click-to-play video — full-width, editorial play button overlay, optional controls after play. */
@@ -189,7 +197,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
               <span style={{ ...B500, color: '#000' }}> — {project.subtitle}</span>
             )}
           </h1>
-          <p style={{ ...B400, fontSize: 20, lineHeight: '28px', color: '#a8a8a8', margin: 0 }}>
+          <p style={{ ...B400, fontSize: 20, lineHeight: '28px', color: '#767676', margin: 0 }}>
             {project.description}
           </p>
         </div>
@@ -299,7 +307,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                   <span style={{
                     fontFamily: 'Barlow, sans-serif', fontWeight: 500,
                     fontSize: 11, lineHeight: '20px', letterSpacing: '0.08em',
-                    color: '#a4a4a4', textTransform: 'uppercase',
+                    color: '#767676', textTransform: 'uppercase',
                     whiteSpace: 'nowrap',
                   }}>
                     {caseStudy.award.level}
@@ -318,7 +326,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                     rel="noopener noreferrer"
                     style={{
                       ...B300, fontSize: 13, lineHeight: '20px',
-                      color: '#a4a4a4', textDecoration: 'none',
+                      color: '#767676', textDecoration: 'none',
                       whiteSpace: 'nowrap', flexShrink: 0,
                     }}
                     className="hover:opacity-60 transition-opacity"
@@ -343,7 +351,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
               <div style={{
                 fontFamily: 'Barlow, sans-serif', fontWeight: 500,
                 fontSize: 12, lineHeight: '20px', letterSpacing: '1px',
-                color: '#a4a4a4', textTransform: 'uppercase', marginBottom: 12,
+                color: '#767676', textTransform: 'uppercase', marginBottom: 12,
               }}>
                 {caseStudy.contextVideo.label}
               </div>
@@ -370,13 +378,13 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 marginTop: 16, gap: 16,
               }}>
-                <div style={{ ...B300, fontSize: 13, lineHeight: '20px', color: '#a4a4a4', fontStyle: 'italic' }}>
+                <div style={{ ...B300, fontSize: 13, lineHeight: '20px', color: '#767676', fontStyle: 'italic' }}>
                   {caseStudy.contextVideo.timestamp
                     ? `MyID Groups appears at ${caseStudy.contextVideo.timestamp}`
                     : ''}
                 </div>
                 {caseStudy.contextVideo.credit && (
-                  <div style={{ ...B300, fontSize: 13, lineHeight: '20px', color: '#a4a4a4', textAlign: 'right' }}>
+                  <div style={{ ...B300, fontSize: 13, lineHeight: '20px', color: '#767676', textAlign: 'right' }}>
                     {caseStudy.contextVideo.credit}
                   </div>
                 )}
@@ -438,7 +446,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                             paddingTop: `${(512 / 960) * 100}%`,
                             background: '#f0f0f0',
                           }}>
-                            <p style={{ ...B300, fontSize: 13, color: '#bbb', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
+                            <p style={{ ...B300, fontSize: 13, color: '#666666', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
                               960 × 512
                             </p>
                           </div>
@@ -466,7 +474,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                       paddingTop: `${(512 / 960) * 100}%`,
                       background: '#f0f0f0',
                     }}>
-                      <p style={{ ...B300, fontSize: 13, color: '#bbb', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
+                      <p style={{ ...B300, fontSize: 13, color: '#666666', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
                         960 × 512
                       </p>
                     </div>
@@ -484,7 +492,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                 }>
                   {section.videos.map((vid, v) => (
                     <FadeUp key={v}>
-                      <div style={{ ...B300, fontSize: 12, letterSpacing: '0.08em', color: '#aaa', textTransform: 'uppercase', marginBottom: 10 }}>
+                      <div style={{ ...B300, fontSize: 12, letterSpacing: '0.08em', color: '#767676', textTransform: 'uppercase', marginBottom: 10 }}>
                         {vid.label}
                       </div>
                       {vid.src ? (
@@ -500,7 +508,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                               <circle cx="20" cy="20" r="19" stroke="#ccc" strokeWidth="1.5" />
                               <polygon points="16,13 28,20 16,27" fill="#ccc" />
                             </svg>
-                            <p style={{ ...B300, fontSize: 12, color: '#bbb', margin: 0, letterSpacing: '0.04em' }}>{vid.label}</p>
+                            <p style={{ ...B300, fontSize: 12, color: '#666666', margin: 0, letterSpacing: '0.04em' }}>{vid.label}</p>
                           </div>
                         </div>
                       )}
@@ -526,7 +534,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                             {sub.body}
                           </div>
                           {sub.video && (
-                            <AutoplayVideo src={sub.video} />
+                            <AutoplayVideo src={sub.video} crop={sub.mediaCrop} />
                           )}
                           {sub.image !== undefined && !sub.video && (
                             sub.image ? (
@@ -541,7 +549,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                                 paddingTop: `${(512 / 460) * 100}%`,
                                 background: '#f0f0f0', marginTop: 20,
                               }}>
-                                <p style={{ ...B300, fontSize: 13, color: '#bbb', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
+                                <p style={{ ...B300, fontSize: 13, color: '#666666', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
                                   460 × 512
                                 </p>
                               </div>
@@ -560,7 +568,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
 
                   /* ── Media block (video or image) ── */
                   const mediaBlock = sub.video ? (
-                    <AutoplayVideo src={sub.video} />
+                    <AutoplayVideo src={sub.video} crop={sub.mediaCrop} />
                   ) : sub.image !== undefined ? (
                     sub.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -574,7 +582,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                         paddingTop: `${(512 / 460) * 100}%`,
                         background: '#f0f0f0',
                       }}>
-                        <p style={{ ...B300, fontSize: 13, color: '#bbb', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
+                        <p style={{ ...B300, fontSize: 13, color: '#666666', letterSpacing: '0.04em', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', margin: 0, whiteSpace: 'nowrap' }}>
                           460 × 512
                         </p>
                       </div>
@@ -592,7 +600,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
                       </div>
                       {sub.feedback && (
                         <div style={{ marginTop: 24, paddingLeft: 16, borderLeft: '2px solid #e8e8e8' }}>
-                          <span style={{ ...B600, fontSize: 13, lineHeight: '20px', color: '#a4a4a4', letterSpacing: '0.04em', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>
+                          <span style={{ ...B600, fontSize: 13, lineHeight: '20px', color: '#767676', letterSpacing: '0.04em', textTransform: 'uppercase', display: 'block', marginBottom: 6 }}>
                             Feedback
                           </span>
                           <div style={{ ...B300, fontSize: 15, lineHeight: '26px', color: '#555' }}>
@@ -733,7 +741,7 @@ export default function ProjectDetail({ project, prev, next }: Props) {
 
       {/* ── Footer ──────────────────────────────────────────────────── */}
       <div style={{ borderTop: '1px solid #eee', marginTop: 80 }}>
-        <div style={{ maxWidth: 940, margin: '0 auto', padding: '64px 0' }} className="px-6 md:px-12">
+        <div style={{ maxWidth: 940, margin: '0 auto', padding: '64px 0' }} className="px-4 md:px-12">
           <div className="site-footer-row">
             <span style={{ ...B600, fontSize: 16, lineHeight: '20px', ...TEXT }}>Yeonjae Kim</span>
             <a href="mailto:yeonjae.design@gmail.com" target="_blank" rel="noopener noreferrer"
