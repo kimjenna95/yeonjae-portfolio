@@ -420,8 +420,8 @@ In a product spanning this many content surfaces and interaction patterns, consi
           `/travelu/calculation.png`,
         ],
         imageStyles: [
-          { width: '40%', marginLeft: 'auto', marginRight: 'auto', display: 'block' },
-          undefined,
+          { width: '70%', marginLeft: 'auto', marginRight: 'auto', display: 'block' },
+          { width: '100%', maxWidth: '100%', display: 'block', height: 'auto' },
           undefined,
         ],
       },
