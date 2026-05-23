@@ -507,7 +507,7 @@ export default function LifeIsSweetDetail({ prev, next }: Props) {
 
       {/* FOOTER */}
       <div style={{ borderTop: '1px solid #eee' }}>
-        <div style={{ maxWidth: 940, margin: '0 auto', paddingTop: 64, paddingBottom: 64 }} className="px-4 md:px-6">
+        <div style={{ maxWidth: 940, margin: '0 auto', paddingTop: 64, paddingBottom: 64 }} className="px-6">
           <div className="site-footer-row">
             <span style={{ ...B600, fontSize: 16, color: '#333' }}>Yeonjae Kim</span>
             <a href="mailto:yeonjae.design@gmail.com" target="_blank" rel="noopener noreferrer"
