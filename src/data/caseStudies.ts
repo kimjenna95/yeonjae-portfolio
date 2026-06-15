@@ -69,6 +69,7 @@ export interface CaseStudy {
   award?: CaseAward       // industry recognition shown below metrics
   contextVideo?: ContextVideo  // ecosystem/context video shown after metrics
   sections: CaseSection[]
+  extendedNote?: string   // subtle callout shown before the final section
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -166,6 +167,7 @@ export const caseStudies: CaseStudy[] = [
           `Most users won't think about MyID Groups unless something goes wrong. That's the success condition for this kind of work — not delight, but reliability. Enterprise design taught me that clarity is a form of trust. When a system is transparent about what it's doing and why, users can operate with confidence. When it isn't, they build workarounds — and those workarounds become the real UX problem.`,
       },
     ],
+    extendedNote: `Additional case study details available upon request.`,
   },
 
   // ── J.P. Morgan Chase ────────────────────────────────────────────

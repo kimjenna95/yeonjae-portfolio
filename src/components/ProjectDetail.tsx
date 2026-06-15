@@ -404,6 +404,27 @@ export default function ProjectDetail({ project, prev, next }: Props) {
         caseStudy.sections.map((section, i) => (
           <div key={i}>
 
+            {/* Extended case study note — subtle callout before the final section */}
+            {i === caseStudy.sections.length - 1 && caseStudy.extendedNote && (
+              <FadeUp style={{ maxWidth: 640, margin: '80px auto 0' }}>
+                <div className="px-6 md:px-12">
+                  <div style={{
+                    background: '#f9f9f9',
+                    border: '1px solid #eee',
+                    borderRadius: 8,
+                    padding: '20px 24px',
+                  }}>
+                    <div style={{ ...B600, fontSize: 12, lineHeight: '20px', letterSpacing: '0.08em', color: '#767676', textTransform: 'uppercase', marginBottom: 6 }}>
+                      Note
+                    </div>
+                    <div style={{ ...B300, fontSize: 15, lineHeight: '24px', color: '#555' }}>
+                      {caseStudy.extendedNote}
+                    </div>
+                  </div>
+                </div>
+              </FadeUp>
+            )}
+
             {/* Section label + title + body — 640px */}
             <FadeUp style={{ maxWidth: 640, margin: '80px auto 0' }}>
               <div className="px-6 md:px-12">
