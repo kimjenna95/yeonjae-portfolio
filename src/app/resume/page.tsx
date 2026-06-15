@@ -67,7 +67,7 @@ const skills = ['Product Design', 'AI Prototyping', 'Sprint Facilitation', 'UI/U
 const tools = ['Figma', 'Miro', 'Jira', 'Confluence', 'Adobe Creative Suite', 'Figma Make', 'Claude Code', 'Cursor', 'ChatGPT']
 const frontEnd = ['HTML5', 'Bootstrap', 'CSS3', 'JavaScript']
 
-const GDRIVE_URL = 'https://drive.google.com/file/d/1FSK_Tb2qDGw009gICKnXaJXfJ9Pwuj7O/view?usp=sharing'
+const GDRIVE_URL = 'https://drive.google.com/file/d/1wJGaxqprQGNR434g1dBwPR-jZhBeChm4/view?usp=sharing'
 
 export default function ResumePage() {
   return (
